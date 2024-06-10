@@ -30,7 +30,7 @@ public class Program {
 		}
 
 		System.out.println("\t====Test 4: insert====");
-		Seller newSeller = new Seller(null,"Pedro","pedro@gmail.com",LocalDate.now(),4500.00,new Department(3,"Eletronics"));
+		Seller newSeller = new Seller(null,"Fabiana","fabiana@gmail.com",LocalDate.now(),4500.00,new Department(3,"Eletronics"));
 		sellerDao.insert(newSeller);
 		System.out.println("New Id: " + newSeller.getId());
 		
@@ -40,6 +40,10 @@ public class Program {
 		seller.setEmail("dionisio@gmail.com");
 		sellerDao.update(seller);
 		System.out.println("Update Success!");
+		
+		System.out.println("\t====Test 6: delete====");
+		sellerDao.deleteById(10);
+		System.out.println("Delete sucess!");
 		
 
 	}
