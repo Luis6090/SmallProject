@@ -29,11 +29,17 @@ public class Program {
 			System.out.println(list);
 		}
 
-		System.out.println("\t====Test 4: Insert====");
+		System.out.println("\t====Test 4: insert====");
 		Seller newSeller = new Seller(null,"Pedro","pedro@gmail.com",LocalDate.now(),4500.00,new Department(3,"Eletronics"));
 		sellerDao.insert(newSeller);
-		System.out.println("Id: " + newSeller.getId());
+		System.out.println("New Id: " + newSeller.getId());
 		
+		System.out.println("\t====Test 5: update====");
+		seller = sellerDao.findById(9);
+		seller.setName("Dionisio");
+		seller.setEmail("dionisio@gmail.com");
+		sellerDao.update(seller);
+		System.out.println("Update Success!");
 		
 
 	}
